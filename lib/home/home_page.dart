@@ -58,25 +58,34 @@ class HomePage extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 50.0,),
+            const SizedBox(height: 30.0,),
 
             //ClothesArea
             //TODO 取得したデータに合わせて画像を切り替え
             //TODO 朝・昼・夜に分けるか検討
             //TODO CarouselSliderで実装してみたがイマイチ。そもそも仮に朝昼夜を表示するのであれば回転させる必要がない。
-            Image.asset("assets/images/t_shirt.png"),
+            Expanded(child: Image.asset("assets/images/t_shirt.png")),
 
-            const SizedBox(height: 50.0,),
+            const SizedBox(height: 30.0,),
 
             //TODO ForecastArea
             Container(
               height: 100.0,
               width: size.width,
               color: Colors.blue,
-              child: const Center(child: Text("週間予報が入ります")),
+              child: const Center(child: Text("週間予報が入ります"),),
             ),
 
+            const SizedBox(height: 30.0,),
+
             //TODO AdArea
+            Container(
+              height: 75.0,
+              width: size.width,
+              color: Colors.blue,
+              child: const Center(child: Text("バナー広告が入ります"),),
+            ),
+
           ],
         ),
       ),
