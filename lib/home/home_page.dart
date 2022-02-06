@@ -9,8 +9,22 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            //TODO MenuArea
-            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: const [
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  //TODO 押下処理の追加
+                  child: Icon(Icons.settings),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  //TODO 押下処理の追加
+                  child: Icon(Icons.share),
+                ),
+              ],
+            )
+
             //TODO AddressArea
 
             //TODO DateArea
