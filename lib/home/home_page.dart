@@ -5,6 +5,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -65,7 +66,15 @@ class HomePage extends StatelessWidget {
             //TODO CarouselSliderで実装してみたがイマイチ。そもそも仮に朝昼夜を表示するのであれば回転させる必要がない。
             Image.asset("assets/images/t_shirt.png"),
 
+            const SizedBox(height: 50.0,),
+
             //TODO ForecastArea
+            Container(
+              height: 100.0,
+              width: size.width,
+              color: Colors.blue,
+              child: const Center(child: Text("週間予報が入ります")),
+            ),
 
             //TODO AdArea
           ],
