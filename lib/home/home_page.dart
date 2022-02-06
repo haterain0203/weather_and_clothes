@@ -14,16 +14,24 @@ class HomePage extends StatelessWidget {
             // MenuArea
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
-              children: const [
+              children: [
                 Padding(
-                  padding: EdgeInsets.all(16.0),
-                  //TODO 押下処理の追加
-                  child: Icon(Icons.settings),
+                  padding: const EdgeInsets.all(16.0),
+                  child: IconButton(
+                    icon: const Icon(Icons.settings),
+                    onPressed: () {
+                      //TODO 押下処理の追加
+                    },
+                  ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(16.0),
-                  //TODO 押下処理の追加
-                  child: Icon(Icons.share),
+                  padding: const EdgeInsets.all(16.0),
+                  child: IconButton(
+                    icon: const Icon(Icons.share),
+                    onPressed: () {
+                      //TODO 押下処理の追加
+                    },
+                  ),
                 ),
               ],
             ),
