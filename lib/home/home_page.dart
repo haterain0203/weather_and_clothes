@@ -5,8 +5,26 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          children: [
+            //TODO MenuArea
+            
+            //TODO AddressArea
+
+            //TODO DateArea
+
+            //TODO WeatherArea
+
+            //TODO ClothesArea
+
+            //TODO ForecastArea
+
+            //TODO AdArea
+          ],
+        ),
+      ),
     );
   }
 }
