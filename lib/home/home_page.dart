@@ -33,7 +33,12 @@ class HomePage extends StatelessWidget {
             //TODO 設定画面で入力された住所を取得して表示
             const Text("東京都葛飾区", style: TextStyle(fontSize: 22.0),),
 
-            //TODO DateArea
+            const SizedBox(height: 30.0,),
+
+            //DateArea
+            //TODO 本日の日付を取得して表示
+            //TODO レイアウト的に数字のみフォントを大きくする予定
+            const Text("2月3日（木）", style: TextStyle(fontSize: 28.0),)
 
             //TODO WeatherArea
 
