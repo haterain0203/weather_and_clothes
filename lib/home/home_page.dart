@@ -38,9 +38,24 @@ class HomePage extends StatelessWidget {
             //DateArea
             //TODO 本日の日付を取得して表示
             //TODO レイアウト的に数字のみフォントを大きくする予定
-            const Text("2月3日（木）", style: TextStyle(fontSize: 28.0),)
+            const Text("2月3日（木）", style: TextStyle(fontSize: 28.0),),
 
-            //TODO WeatherArea
+            //WeatherArea
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //TODO 天気に合わせて画像を変更する
+                SizedBox(
+                  width: 100.0,
+                  height: 100.0,
+                  child: Image.asset("assets/images/sun.png"),
+                ),
+                const SizedBox(width: 30.0,),
+                //TODO 取得した気温を表示する
+                //TODO レイアウト的に数字のみフォントを大きくする予定
+                const Text("10℃", style: TextStyle(fontSize: 28.0),)
+              ],
+            ),
 
             //TODO ClothesArea
 
