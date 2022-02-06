@@ -9,6 +9,8 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
+
+            // MenuArea
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: const [
@@ -23,9 +25,13 @@ class HomePage extends StatelessWidget {
                   child: Icon(Icons.share),
                 ),
               ],
-            )
+            ),
 
-            //TODO AddressArea
+            //AddressArea
+            //TODO 設定画面で入力された郵便番号を取得して表示
+            const Text("〒000-0000", style: TextStyle(fontSize: 22.0),),
+            //TODO 設定画面で入力された住所を取得して表示
+            const Text("東京都葛飾区", style: TextStyle(fontSize: 22.0),),
 
             //TODO DateArea
 
