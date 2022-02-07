@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weatherandclothes/views/settings/settings_page.dart';
 
 import 'home_model.dart';
 
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
                 IconButton(
                   icon: const Icon(Icons.settings, size: 24.0,),
                   onPressed: () {
-                    //TODO 押下処理の追加
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsPage()));
                   },
                 ),
                 IconButton(
