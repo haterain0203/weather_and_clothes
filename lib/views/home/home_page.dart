@@ -38,6 +38,7 @@ class HomePage extends StatelessWidget {
 
             //AddressArea
             //TODO 設定画面で入力された郵便番号と住所を取得して表示
+            //TODO テスト的にTextFieldに入力した郵便番号で住所を表示（後で修正）
             TextField(
               onSubmitted: (value) async {
                 await homeModel.getAddress(value);
