@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'home_model.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -6,6 +9,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final homeModel = context.read<HomeModel>();
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -33,7 +38,15 @@ class HomePage extends StatelessWidget {
 
             //AddressArea
             //TODO 設定画面で入力された郵便番号と住所を取得して表示
-            const Text("〒000-0000 東京都葛飾区", style: TextStyle(fontSize: 20.0),),
+            TextField(
+              onSubmitted: (value) async {
+                await homeModel.getAddress(value);
+              },
+            ),
+            Consumer<HomeModel>(builder: (context, model, child) {
+              return Text(model.address, style: const TextStyle(fontSize: 20.0),);
+              }
+            ),
 
             const SizedBox(height: 20.0,),
 

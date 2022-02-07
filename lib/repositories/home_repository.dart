@@ -14,11 +14,11 @@ class HomeRepository {
       Map<String, dynamic> data = jsonDecode(result.body);
       final prefecture = data["results"][0]["address1"];
       final city = data["results"][0]["address2"];
-      final address = prefecture & " " & city;
+      final address = prefecture + " " + city;
       return address;
     } catch(e) {
       print(e);
-      return e.toString();
+      return "エラー";
     }
   }
 
