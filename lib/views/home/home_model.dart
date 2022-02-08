@@ -4,7 +4,7 @@ import 'package:weatherandclothes/repositories/address_repository.dart';
 
 class HomeModel extends ChangeNotifier {
 
-  final repository = HomeRepository();
+  final repository = AddressRepository();
   String address = "";
 
   //郵便番号から住所を取得する処理

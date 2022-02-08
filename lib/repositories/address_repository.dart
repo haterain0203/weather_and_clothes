@@ -1,7 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AddressRepository {
+
+  final String zipCodeKey = "zipCode";
 
   //郵便番号から住所を取得する処理
   Future<String> getAddress(String zipCode) async {
@@ -22,7 +25,12 @@ class AddressRepository {
     }
   }
 
-  //TODO 登録された郵便番号を記録する
+  //登録された郵便番号を記録する
+  Future<void> setZipCode(String zipCode) async {
+    var prefs = await SharedPreferences.getInstance();
+    //sharedPreferencesへの保存処理
+    await prefs.setString(zipCodeKey, zipCode);
+  }
 
 
   //TODO 登録された郵便番号を読み込む
