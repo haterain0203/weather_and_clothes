@@ -61,8 +61,7 @@ class AddressSettingPage extends StatelessWidget {
                   },
                 ),
               ),
-              //TODO zipCodeが入力されている場合は表示する
-              const FaIcon(FontAwesomeIcons.chevronCircleDown),
+              const FaIcon(FontAwesomeIcons.arrowCircleDown),
               SizedBox(height: 16.0,),
               Consumer<AddressSettingModel>(builder: (context, model, child) {
                 return model.isLoading

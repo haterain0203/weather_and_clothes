@@ -5,7 +5,7 @@ import 'package:weatherandclothes/repositories/address_repository.dart';
 class AddressSettingModel extends ChangeNotifier {
 
   final _repository = AddressRepository();
-  String address = "";
+  String address = "-";
   String zipCode = "";
   bool isLoading = false;
 
