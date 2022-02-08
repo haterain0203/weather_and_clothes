@@ -76,23 +76,29 @@ class AddressSettingPage extends StatelessWidget {
               }
               ),
               const SizedBox(height: 50),
-              ElevatedButton(
-                child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text(
-                    '　　登録　　',
-                    style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  primary: Theme.of(context).primaryColor,
-                  onPrimary: Colors.white,
-                  shape: const StadiumBorder(),
-                ),
-                onPressed: () async {
-                  //TODO zipCodeが正しく入力されている場合のみ登録可能にする
-                  await addressSettingModel.setZipCode();
-                },
+    Consumer<AddressSettingModel>(builder: (context, model, child) {
+      return ElevatedButton(
+          child: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              '　　登録　　',
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: Theme.of(context).primaryColor,
+            onPrimary: Colors.white,
+            shape: const StadiumBorder(),
+          ),
+          onPressed: addressSettingModel.address != "-" && addressSettingModel.address != "エラー" ?
+              () async {
+            //TODO zipCodeが正しく入力されている場合のみ登録可能にする
+            await addressSettingModel.setZipCode();
+          }
+              : null
+      );
+          }
+
               ),
             ],
           );
