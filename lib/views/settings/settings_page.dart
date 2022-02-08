@@ -29,38 +29,29 @@ class SettingsPage extends StatelessWidget {
               height: 4.0,
             ),
             SettingListTile(
-              color: Colors.orange.shade400,
-              iconData: FontAwesomeIcons.bell,
-              title: "通知",
+              color: Colors.lightGreen.shade400,
+              iconData: Icons.location_on,
+              title: "住所設定",
               onTap: () {
-//              Navigator.push(
-//                  context,
-//                  MaterialPageRoute(
-//                      builder: (context) =>
-//                          LocalNotificationPage()));
+                //TODO 住所設定処理
               },
             ),
             const Divider(),
             SettingListTile(
-              color: Colors.lightGreen.shade400,
-              iconData: Icons.straighten,
-              title: "距離の設定",
+              color: Colors.orange.shade400,
+              iconData: FontAwesomeIcons.bell,
+              title: "アラーム",
               onTap: () {
-//              Navigator.push(
-//                  context,
-//                  MaterialPageRoute(
-//                      builder: (context) =>
-//                      const SettingDistancePage()));
+                //TODO アラーム設定処理
               },
             ),
-            const SizedBox(
-              height: 16.0,
-            ),
+            const SizedBox(height: 16.0,),
+
             Container(
               color: Colors.grey.shade500,
               child: const ListTile(
                 title: Text(
-                  "このアプリについて",
+                  "設定",
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -73,22 +64,32 @@ class SettingsPage extends StatelessWidget {
             ),
             SettingListTile(
               color: Colors.blue.shade400,
-              iconData: FontAwesomeIcons.twitter,
-              title: "TwitterDMで問い合わせ",
+              iconData: FontAwesomeIcons.mailBulk,
+              title: "お問い合わせ",
               onTap: () async {
-//              await model.launchTwitterDM();
+                //TODO GoogleFormへ遷移
               },
             ),
             const Divider(),
             SettingListTile(
               color: Colors.red.shade400,
               iconData: FontAwesomeIcons.pen,
-              title: "ストアでレビューを書く",
+              title: "ストアでレビュー",
               onTap: () {
+                //TODO ストアレビュー処理
 //              LaunchReview.launch(
 //                  androidAppId: "com.stroll_app.stroll_app",
 //                  iOSAppId: "1596553008");
               },
+            ),
+            const Divider(),
+            SettingListTile(
+              color: Colors.pink.shade300,
+              iconData: FontAwesomeIcons.shareAlt,
+              title: "アプリをシェア",
+              onTap: () {
+                //TODO アプリシェア機能
+              }
             ),
             const Divider(),
             SettingListTile(
@@ -98,7 +99,7 @@ class SettingsPage extends StatelessWidget {
               trailing: Consumer<SettingsModel>(
                 builder: (context, model, child) {
                   return const Text(
-                    //TODO
+                    //TODO アプリ名の取得と表示
                     "アプリ名が入ります",
 //                  model.appName,
                     style: TextStyle(fontSize: 16.0),
@@ -114,8 +115,8 @@ class SettingsPage extends StatelessWidget {
               trailing: Consumer<SettingsModel>(
                 builder: (context, model, child) {
                   return const Text(
-                    //TODO
-                    "アプリバージョンが入ります",
+                  //TODO アプリバージョンの取得と表示
+                  "アプリバージョンが入ります",
 //                  model.version,
                     style: TextStyle(fontSize: 16.0),
                   );
