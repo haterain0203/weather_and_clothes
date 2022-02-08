@@ -20,7 +20,7 @@ class AddressSettingPage extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 32.0,
+            height: 48.0,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
@@ -57,6 +57,24 @@ class AddressSettingPage extends StatelessWidget {
               ),
             );
           }
+          ),
+          const SizedBox(height: 50),
+          ElevatedButton(
+            child: const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                '　　登録　　',
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: Theme.of(context).primaryColor,
+              onPrimary: Colors.white,
+              shape: const StadiumBorder(),
+            ),
+            onPressed: () async {
+              //TODO ボタン押下時の処理
+            },
           ),
         ],
       ),
