@@ -26,7 +26,7 @@ class AddressSettingPage extends StatelessWidget {
 
           if (snapshot.error != null) {
             // エラー
-            return Center(child: Text('エラーがおきました'));
+            return Center(child: Text('エラーがおきました'),);
           }
 
           return Column(
@@ -54,15 +54,20 @@ class AddressSettingPage extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   maxLines: 1,
                   maxLength: 7,
-                  onFieldSubmitted: (zipCode) {
-                    addressSettingModel.getAddress(zipCode);
+                  onFieldSubmitted: (zipCode) async {
+                    addressSettingModel.startLoading();
+                    await addressSettingModel.getAddress(zipCode);
+                    addressSettingModel.endLoading();
                   },
                 ),
               ),
               //TODO zipCodeが入力されている場合は表示する
               const FaIcon(FontAwesomeIcons.chevronCircleDown),
+              SizedBox(height: 16.0,),
               Consumer<AddressSettingModel>(builder: (context, model, child) {
-                return Padding(
+                return model.isLoading
+                    ? Center(child: CircularProgressIndicator())
+                    : Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
                   child: Text(
                     model.address,

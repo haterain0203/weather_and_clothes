@@ -23,6 +23,7 @@ class AddressSettingModel extends ChangeNotifier {
     //sharedで保存している郵便番号を取得。登録がない場合は””を取得
     await getZipCode();
     //zipCodeが既に登録済みの場合、それに応じた住所を取得する
+    //TODO 郵便番号をもとにした住所取得に時間がかかるので、住所の文字列もSharedで保管してそれを読み込んだ方が良いか？
     if(zipCode != "") await getAddress(zipCode);
   }
 
@@ -30,7 +31,6 @@ class AddressSettingModel extends ChangeNotifier {
   Future<void> getAddress(String zipCode) async {
     this.zipCode = zipCode;
     address = await _repository.getAddress(zipCode);
-    notifyListeners();
   }
 
   //登録された郵便番号を記録する
