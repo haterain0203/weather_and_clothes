@@ -51,7 +51,7 @@ class SettingsPage extends StatelessWidget {
               color: Colors.grey.shade500,
               child: const ListTile(
                 title: Text(
-                  "設定",
+                  "このアプリについて",
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
