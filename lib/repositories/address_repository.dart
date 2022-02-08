@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart';
 
-class HomeRepository {
+class AddressRepository {
 
   //郵便番号から住所を取得する処理
   Future<String> getAddress(String zipCode) async {
@@ -22,4 +22,8 @@ class HomeRepository {
     }
   }
 
+  //TODO 登録された郵便番号を記録する
+
+
+  //TODO 登録された郵便番号を読み込む
 }

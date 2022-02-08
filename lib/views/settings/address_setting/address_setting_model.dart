@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherandclothes/repositories/home_repository.dart';
+import 'package:weatherandclothes/repositories/address_repository.dart';
 
 class AddressSettingModel extends ChangeNotifier {
 
