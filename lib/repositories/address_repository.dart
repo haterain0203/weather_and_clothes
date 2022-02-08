@@ -35,7 +35,7 @@ class AddressRepository {
   //登録された郵便番号を読み込む
   Future<String> getZipCode() async {
     var prefs = await SharedPreferences.getInstance();
-    return prefs.getString(zipCodeKey)!;
+    return prefs.getString(zipCodeKey) ?? "";
   }
 
 }

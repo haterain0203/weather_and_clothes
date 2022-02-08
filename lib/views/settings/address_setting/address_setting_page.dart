@@ -34,7 +34,7 @@ class AddressSettingPage extends StatelessWidget {
                 border: const OutlineInputBorder(),
               ),
               //TODO sharedで保存した値を表示する
-//                initialValue: "",
+              initialValue: addressSettingModel.zipCode,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 24.0),
               //数値のみ入力できるように制限
@@ -42,7 +42,7 @@ class AddressSettingPage extends StatelessWidget {
               keyboardType: TextInputType.number,
               maxLines: 1,
               maxLength: 7,
-              onChanged: (zipCode) {
+              onFieldSubmitted: (zipCode) {
                 addressSettingModel.getAddress(zipCode);
               },
             ),
@@ -74,6 +74,7 @@ class AddressSettingPage extends StatelessWidget {
             ),
             onPressed: () async {
               //TODO ボタン押下時の処理
+              await addressSettingModel.setZipCode();
             },
           ),
         ],

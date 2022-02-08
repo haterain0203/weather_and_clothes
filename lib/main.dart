@@ -14,7 +14,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => HomeModel()),
         ChangeNotifierProvider(create: (_) => SettingsModel()),
-        ChangeNotifierProvider(create: (_) => AddressSettingModel()),
+        ChangeNotifierProvider(create: (_) => AddressSettingModel()..init()),
       ],
       child: const MyApp(),
     ),

@@ -6,7 +6,11 @@ class AddressSettingModel extends ChangeNotifier {
 
   final _repository = AddressRepository();
   String address = "";
-  String? zipCode;
+  String zipCode = "";
+
+  void init() async {
+    await getZipCode();
+  }
 
   //郵便番号から住所を取得する処理
   Future<void> getAddress(String zipCode) async {
@@ -17,10 +21,10 @@ class AddressSettingModel extends ChangeNotifier {
 
   //登録された郵便番号を記録する
   Future<void> setZipCode() async {
-    if(zipCode != null) {
-      await _repository.setZipCode(zipCode!);
+    if(zipCode.length == 7) {
+      await _repository.setZipCode(zipCode);
     } else {
-      throw ("郵便番号が入力されていません");
+      throw ("正しく郵便番号が入力されていません");
     }
   }
 
