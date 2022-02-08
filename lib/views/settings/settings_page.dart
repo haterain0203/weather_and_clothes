@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:weatherandclothes/views/settings/address_setting_page.dart';
+import 'package:weatherandclothes/views/settings/address_setting/address_setting_page.dart';
 import 'package:weatherandclothes/views/settings/settings_model.dart';
 import '../../components/setting_list_tile.dart';
 

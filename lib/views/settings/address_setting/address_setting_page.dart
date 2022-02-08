@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:weatherandclothes/views/settings/address_setting/address_setting_model.dart';
 
 //TODO ページではなく、ダイアログ表示の方がUX的に良いか？
 class AddressSettingPage extends StatelessWidget {
@@ -7,6 +10,8 @@ class AddressSettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final addressSettingModel = context.read<AddressSettingModel>();
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -37,10 +42,21 @@ class AddressSettingPage extends StatelessWidget {
               keyboardType: TextInputType.number,
               maxLines: 1,
               maxLength: 7,
-              onChanged: (minDistance) {
-//                    model.minDistance = minDistance;
+              onChanged: (zipCode) {
+                addressSettingModel.getAddress(zipCode);
               },
             ),
+          ),
+          const FaIcon(FontAwesomeIcons.chevronCircleDown),
+          Consumer<AddressSettingModel>(builder: (context, model, child) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Text(
+                model.address,
+                style: TextStyle(fontSize: 24.0),
+              ),
+            );
+          }
           ),
         ],
       ),
