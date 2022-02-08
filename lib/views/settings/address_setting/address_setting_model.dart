@@ -23,4 +23,9 @@ class AddressSettingModel extends ChangeNotifier {
       throw ("郵便番号が入力されていません");
     }
   }
+
+  //登録された郵便番号を読み込む
+  Future<void> getZipCode() async {
+    zipCode = await _repository.getZipCode();
+  }
 }
