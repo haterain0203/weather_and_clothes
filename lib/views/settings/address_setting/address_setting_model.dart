@@ -19,10 +19,11 @@ class AddressSettingModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void init() async {
-    startLoading();
+  Future<void> init() async {
+    //sharedで保存している郵便番号を取得。登録がない場合は””を取得
     await getZipCode();
-    endLoading();
+    //zipCodeが既に登録済みの場合、それに応じた住所を取得する
+    if(zipCode != "") await getAddress(zipCode);
   }
 
   //郵便番号から住所を取得する処理
@@ -34,6 +35,7 @@ class AddressSettingModel extends ChangeNotifier {
 
   //登録された郵便番号を記録する
   Future<void> setZipCode() async {
+    print(zipCode.length);
     if(zipCode.length == 7) {
       await _repository.setZipCode(zipCode);
     } else {
