@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:weatherandclothes/views/settings/address_setting_page.dart';
 import 'package:weatherandclothes/views/settings/settings_model.dart';
 import '../../components/setting_list_tile.dart';
 
@@ -34,6 +35,7 @@ class SettingsPage extends StatelessWidget {
               title: "住所設定",
               onTap: () {
                 //TODO 住所設定処理
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AddressSettingPage()));
               },
             ),
             const Divider(),
