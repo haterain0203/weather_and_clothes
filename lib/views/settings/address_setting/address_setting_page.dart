@@ -49,7 +49,7 @@ class AddressSettingPage extends StatelessWidget {
                       ),
                       border: const OutlineInputBorder(),
                     ),
-                    //TODO sharedで保存した値を表示する
+                    //sharedで保存した値を表示する
                     initialValue: addressSettingModel.zipCode,
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 24.0),
@@ -58,6 +58,7 @@ class AddressSettingPage extends StatelessWidget {
                     keyboardType: TextInputType.number,
                     maxLines: 1,
                     maxLength: 7,
+                    //入力完了時にその郵便番号をもとに住所を取得する
                     onFieldSubmitted: (zipCode) async {
                       addressSettingModel.startLoading();
                       await addressSettingModel.getAddress(zipCode);
@@ -96,13 +97,14 @@ class AddressSettingPage extends StatelessWidget {
                         onPrimary: Colors.white,
                         shape: const StadiumBorder(),
                       ),
+                      //住所が正しく表示されている場合のみ登録ボタンを押下できる
                       onPressed: addressSettingModel.address != "-" &&
                               addressSettingModel.address != "エラー"
                           ? () async {
-                              //TODO zipCodeが正しく入力されている場合のみ登録可能にする
                               await addressSettingModel.setZipCode();
                             }
-                          : null);
+                          : null
+                  );
                 }),
               ],
             );
