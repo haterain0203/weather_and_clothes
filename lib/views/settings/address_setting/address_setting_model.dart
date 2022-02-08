@@ -7,9 +7,22 @@ class AddressSettingModel extends ChangeNotifier {
   final _repository = AddressRepository();
   String address = "";
   String zipCode = "";
+  bool isLoading = false;
+
+  void startLoading() {
+    isLoading = true;
+    notifyListeners();
+  }
+
+  void endLoading() {
+    isLoading = false;
+    notifyListeners();
+  }
 
   void init() async {
+    startLoading();
     await getZipCode();
+    endLoading();
   }
 
   //郵便番号から住所を取得する処理
