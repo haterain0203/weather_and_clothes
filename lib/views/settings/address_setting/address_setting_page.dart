@@ -102,6 +102,7 @@ class AddressSettingPage extends StatelessWidget {
                               addressSettingModel.address != "エラー"
                           ? () async {
                               await addressSettingModel.setZipCode();
+                              //TODO 登録完了ダイアログの表示
                             }
                           : null
                   );
