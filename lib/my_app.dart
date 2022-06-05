@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weatherandclothes/views/home/home_page.dart';
 import 'app_theme.dart';
-import 'home/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
